@@ -1,22 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MYTT Rating System</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="MYTT Malaysia Table Tennis Rating System">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="page-bg"></div>
-  <header class="site-header">
-    <div class="brand">
-      <div class="logo-mark">🏓</div>
-      <div>
-        <div class="brand-name">MYTT</div>
-        <div class="brand-sub">Malaysia Table Tennis Rating System</div>
-      </div>
-    </div>
-    <nav>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="MYTT Home">
+      <span class="brand-icon">🏓</span>
+      <span>
+        <strong>MYTT</strong>
+        <small>Malaysia Table Tennis Rating System</small>
+      </span>
+    </a>
+    <nav class="nav">
       <a href="#submit">Submit</a>
       <a href="#singles">Singles</a>
       <a href="#doubles">Doubles</a>
@@ -24,71 +24,129 @@
     </nav>
   </header>
 
-  <main>
+  <main id="home">
     <section class="hero">
-      <p class="eyebrow">MYTT Rating System</p>
-      <h1>Play. Compete. Improve. Rank.</h1>
-      <p class="hero-text">Official match submission and live leaderboard for MYTT singles and doubles matches.</p>
-      <div id="submit" class="submit-panel">
-        <a class="submit-btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfjxBBPNNCF92Aq89YZ-n9-oq5F0WtuNPD3zK6D_3woZLS9aw/viewform?usp=header" target="_blank" rel="noopener">🏓 Submit Singles Result</a>
-        <a class="submit-btn secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSe3cKNpJLp8RtUpAPV4Gg1jyBAiNCQ13Vlfz1RHGZoQyjHClg/viewform?usp=header" target="_blank" rel="noopener">👥 Submit Doubles Result</a>
+      <div class="hero-copy">
+        <p class="kicker">Official Rating System</p>
+        <h1>Play. Compete. Improve. Rank.</h1>
+        <p class="intro">Submit match results and view live singles and doubles standings in one place.</p>
+
+        <div id="submit" class="cta-grid">
+          <a class="cta cta-red" href="https://docs.google.com/forms/d/e/1FAIpQLSfjxBBPNNCF92Aq89YZ-n9-oq5F0WtuNPD3zK6D_3woZLS9aw/viewform?usp=header" target="_blank" rel="noopener">
+            <span>🏓</span>
+            <div>
+              <strong>Submit Singles Result</strong>
+              <small>Open match result form</small>
+            </div>
+          </a>
+
+          <a class="cta cta-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSe3cKNpJLp8RtUpAPV4Gg1jyBAiNCQ13Vlfz1RHGZoQyjHClg/viewform?usp=header" target="_blank" rel="noopener">
+            <span>👥</span>
+            <div>
+              <strong>Submit Doubles Result</strong>
+              <small>Open match result form</small>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="pulse-ball"></div>
+        <p>MYTT Live</p>
+        <h2>1500 → 1520 → 1535</h2>
+        <span>Every match counts.</span>
       </div>
     </section>
 
     <section id="singles" class="board-section">
-      <div class="section-title">
-        <h2>🏓 Singles Matches Leaderboard</h2>
-        <span id="singles-updated">Loading...</span>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Singles</p>
+          <h2>Singles Matches Leaderboard</h2>
+        </div>
+        <span id="singlesStatus" class="status">Loading...</span>
       </div>
-      <div class="rating-tag">MYTT Single Match Rating System</div>
-      <div class="leaderboard-card">
-        <div class="table-wrap">
+
+      <div class="board-card">
+        <div class="table-scroll">
           <table>
-            <thead><tr><th>Rank</th><th>Player</th><th>Rating</th><th>W-L</th><th>Win %</th><th>Peak</th></tr></thead>
-            <tbody id="singles-body"><tr><td colspan="6" class="loading">Loading singles leaderboard...</td></tr></tbody>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Rating</th>
+                <th>W-L</th>
+                <th>Win %</th>
+                <th>Peak</th>
+              </tr>
+            </thead>
+            <tbody id="singlesBody">
+              <tr><td colspan="6" class="loading">Loading singles leaderboard...</td></tr>
+            </tbody>
           </table>
         </div>
       </div>
     </section>
 
     <section id="doubles" class="board-section">
-      <div class="section-title">
-        <h2>👥 Doubles Matches Leaderboard</h2>
-        <span id="doubles-updated">Loading...</span>
+      <div class="section-head">
+        <div>
+          <p class="kicker">Doubles</p>
+          <h2>Doubles Matches Leaderboard</h2>
+        </div>
+        <span id="doublesStatus" class="status">Loading...</span>
       </div>
-      <div class="rating-tag">MYTT Doubles Match Rating System</div>
-      <div class="leaderboard-card">
-        <div class="table-wrap">
+
+      <div class="board-card">
+        <div class="table-scroll">
           <table>
-            <thead><tr><th>Rank</th><th>Team</th><th>Rating</th><th>W-L</th><th>Win %</th><th>Peak</th></tr></thead>
-            <tbody id="doubles-body"><tr><td colspan="6" class="loading">Loading doubles leaderboard...</td></tr></tbody>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Team</th>
+                <th>Rating</th>
+                <th>W-L</th>
+                <th>Win %</th>
+                <th>Peak</th>
+              </tr>
+            </thead>
+            <tbody id="doublesBody">
+              <tr><td colspan="6" class="loading">Loading doubles leaderboard...</td></tr>
+            </tbody>
           </table>
         </div>
       </div>
     </section>
 
     <section id="notice" class="info-grid">
-      <div class="info-card">
+      <article>
         <h3>📅 Weekly Schedule</h3>
-        <p>🏓 Monday — Singles Matches</p>
-        <p>👥 Friday — Doubles Matches</p>
-        <p>🎯 Sunday — Optional / Make-up Matches</p>
-      </div>
-      <div class="info-card">
+        <p><strong>Monday</strong> — Singles Matches</p>
+        <p><strong>Friday</strong> — Doubles Matches</p>
+        <p><strong>Sunday</strong> — Optional / Make-up Matches</p>
+      </article>
+
+      <article>
         <h3>📢 Notice</h3>
-        <p>Only one player/team needs to submit the result after each match.</p>
-        <p>Ratings and leaderboards update automatically after each submission.</p>
-        <p>Fixed doubles teams only. Changing partners starts from 1500 rating.</p>
-      </div>
+        <p>After each match, only one player/team needs to submit the result.</p>
+        <p>Ratings and leaderboards are updated automatically after each submission.</p>
+        <p>Doubles uses fixed teams only. Changing partner starts from 1500 rating.</p>
+      </article>
     </section>
   </main>
-  <footer>🏓 MYTT · Malaysia Table Tennis Rating System · © 2026 MYTT</footer>
+
+  <footer>
+    <strong>🏓 MYTT</strong>
+    <span>Malaysia Table Tennis Rating System</span>
+    <span>© 2026 MYTT. All Rights Reserved.</span>
+  </footer>
+
   <script>
-    window.MYTT_CONFIG = {
+    window.MYTT = {
       singlesCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSXGQ-Pfqt9eY3wGYsSdbvEUtzhi3CeeBvGe06j3e5jXOkucz2vTtaQ7SbQTJu_qdwRfBYxNoqmi6R2/pub?gid=0&single=true&output=csv",
       doublesCsv: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSluDdRh-2MZW7emwK5wqPgFH-DUEgtWHbLcoZbThrl4rCEJOD25ztXK15S7_MPibRKNee5W0Y9GCY0/pub?gid=20383104&single=true&output=csv"
     };
   </script>
-  <script src="script.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

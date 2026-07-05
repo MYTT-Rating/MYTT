@@ -1,3 +1,5 @@
-# MYTT
+# MYTT Website V2
 
-Malaysia Table Tennis Rating System website.
+Official MYTT Rating System website.
+
+Upload these files to the root of your GitHub Pages repository.
